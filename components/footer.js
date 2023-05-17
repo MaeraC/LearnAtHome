@@ -19,3 +19,5 @@ function footer() {
         <span>2020 - ©️Tous droits réservés - Learn@Home.
     `
 }
+
+footer()

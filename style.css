@@ -20,6 +20,21 @@ button {
     font-family: 'Raleway', sans-serif;
     cursor: pointer;
 }
+.button {
+    background-color: #77129b;
+    width: 100%;
+    padding: 10px 0;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+    box-shadow: 5px 5px 8px 1px #00000074;
+}
+.button:hover {
+    box-shadow: 5px 5px 15px 1px #000000b6;
+    transition: 0.3s;
+}
 /* HEADER HOME ********************************************************
 ***********************************************************************/
 .header-home {
@@ -205,4 +220,162 @@ footer button {
     outline: none;
     color: white;
     font-size: 15px;
+}
+/* HEADER SIGNUP ********************************************************
+***********************************************************************/
+.header-signup {
+    background-color: #9500CA;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+}
+.header-signup h1 {
+    font-size: 20px;
+    font-style: italic;
+    font-weight: normal;
+}
+.header-signup a {
+    color: white;
+}
+
+.main-signup {
+    background: linear-gradient(180deg, #D7FFDB 0%, #9500CA 73.96%, #D7FFDB 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* FORM SIGNUP ********************************************************
+***********************************************************************/
+.main-signup .form-inscription {
+    display: flex;
+    align-items: center;
+}
+.form1 {
+    background-color: #9500CA;
+    width: 400px;
+    border-radius: 20px;
+    color: white;
+    margin: 50px 0;
+    padding: 40px;
+    box-shadow: 15px 15px 15px #00000077;
+    position: relative;
+}
+.input-container div {
+    margin-top: 30px;
+    margin-bottom: 5px;
+}
+.input-container input {
+    width: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    border-bottom: 1px white solid;
+    padding-left: 40px;
+    padding-bottom: 5px;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+}
+.input-container input::placeholder {
+    color: white;
+}
+.input-container {
+    position: relative;
+    margin: 20px 0;
+    margin-top: 50px;
+}
+.input-container i {
+    position: absolute;
+    left: 10px;
+    font-size: 15px;
+}
+.checkbox-form {
+    width: 100%;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.submit-input {
+    margin: 20px;
+    margin-left: 0;
+    background-color: #DF9DF5;
+    color: black;
+}
+.main-signup form .login-link , .home-link , .login-link2 {
+    color: white;
+    display: flex;
+    justify-content: center;
+    font-size: 13px;
+}
+.home-link {
+    margin-top: 20px;
+    display: none;
+}
+.main-signup form .login-link:hover , .home-link:hover , .mdp-forget:hover, .login-link2:hover {
+    text-decoration: underline;
+}
+.head-icon-form , .head-icon-form2 {
+    position: absolute;
+    background-color: #77129b;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%); 
+    border-radius: 50%;
+}
+.head-icon-form2 {
+    top: 50px;
+}
+.head-icon-form i , .head-icon-form2 i {
+    font-size: 50px;
+    padding: 20px;
+}
+.main-signup span {
+    color: red;
+    display: none;
+}
+.form-informations {
+    background-color: #AD6EC3;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 20px;
+    color: white;
+    width: 400px;
+    height: 100%;
+    font-size: 14px;
+    box-shadow: 15px 15px 15px #00000077;
+}
+.form-informations textarea {
+    height: 60px;
+    background-color: #DF9DF5;
+    width: 100%;
+    font-family: 'Raleway', sans-serif;
+    padding: 10px;
+    font-size: 14px;
+    margin-top: 10px;
+}
+.thanks {
+    text-align: center;
+    display: none;
+}
+.question1 , .question2 {
+    margin-bottom: 20px;
+}
+.form-details {
+    font-size: 12px;
+    color: white;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.mdp-forget {
+    color: white;
+}
+.submit-input-login {
+    margin: 20px 0;
+    margin-bottom: 30px;
+}
+.login-link2 {
+    margin-bottom: 10px;
 }
