@@ -17,15 +17,33 @@ function formSignup() {
     const submitBtn = document.querySelector(".submit-input")
     const loginLink = document.querySelector(".login-link")
     const homeLink = document.querySelector(".home-link")
+    const studentRadio = document.querySelector(".student-radio")
+    const teacherRadio = document.querySelector(".teacher-radio")
+    const profileType = document.querySelector(".profile-type")
+    const profileBtn = document.querySelector(".profile-btn")
+    const formInformations = document.querySelector(".form-informations")
+    const formTeacher = document.querySelector(".form-teacher")
+    const question3Input = document.querySelector(".question3 textarea")
+    const question3Error = document.querySelector('.question3-error');
+    const yesRadioBtn = document.querySelector(".yes-radio")
+    const noRadioBtn = document.querySelector(".no-radio")
+    const telInput = document.querySelector(".tel-input")
+    const yesNoError = document.querySelector(".yes-no-error")
+    const telerror2 = document.querySelector(".tel-error2")
+    const fileInput = document.querySelector(".upload-btn")
+    const fileError = document.querySelector(".file-error")
 
-    // Fonction de validation de l'adresse e-mail
     function validateEmail(email) {
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return regex.test(email);
     }
 
-    // Fonction de validation du formulaire
-    function validateForm(e) {
+    function validateTelInput(tel) {
+        var regex = /^\d{10}$/ // 10 chiffres
+        return regex.test(tel)
+    }
+
+    function validateFormStudent(e) {
         e.preventDefault(); // Empêche la soumission du formulaire
 
         if (!validateEmail(emailInput.value)) {
@@ -92,12 +110,99 @@ function formSignup() {
             const thanksParagraph = document.querySelector('.thanks');
             thanksParagraph.style.display = 'block';
         }
-
-        
     }
 
-    // Écouteur d'événement pour la soumission du formulaire
-    form.addEventListener('submit', validateForm);
+    
+    function validateFormTeacher(e) {
+        e.preventDefault();
+
+        if (!validateEmail(emailInput.value)) {
+            emailError.style.display = "block"
+            return false
+        }
+        else {
+            emailError.style.display = "none"
+        }
+
+        if (nameInput.value.trim() === '') {
+            nameError.style.display = "block"
+            return false
+        }
+        else {
+            nameError.style.display = "none"
+        }
+
+        if (passwordInput.value.trim() === '') {
+            passwordError.style.display = "block"
+            return false
+        }
+        else {
+            passwordError.style.display = "none"
+        }
+
+        if (passwordConfirmInput.value.trim() === '') {
+            passwordConfirmError.style.display = "block"
+            return false
+        } else if (passwordConfirmInput.value !== passwordInput.value) {
+            passwordConfirmError.style.display = "none"
+            passwordConfirmError2.style.display = "block"
+            return false
+        }
+        else {
+            passwordConfirmError.style.display = "none"
+            passwordConfirmError2.style.display = "none"
+        }
+
+        // Validation de la réponse à la question 1
+        if (question3Input.value.trim() === '') {
+            question3Error.style.display = "block"
+            return false
+        }
+        else {
+            question3Error.style.display = "none"
+        }
+
+        if (yesRadioBtn.checked) {
+            if (telInput.value.trim() === '') {
+                telerror2.style.display = "block"
+            }
+            else {
+                telerror2.style.display = "none"
+            }
+        }
+
+        if (yesRadioBtn.checked == false && noRadioBtn.checked == false) {
+            yesNoError.style.display = "block"
+        }
+        else {
+            yesNoError.style.display = "none"
+        }
+
+        if (!validateTelInput(telInput.value)) {
+            telerror2.style.display = "block"
+        }
+        else {
+            telerror2.style.display = "none"
+        }
+
+        window.location.href = ""
+    }
+
+    profileBtn.addEventListener("click", () => {
+        if (studentRadio.checked) {
+            profileType.style.display = "none"
+            formInformations.style.display = "block"
+            form.addEventListener('submit', validateFormStudent);
+
+        }
+        if (teacherRadio.checked) {
+            profileType.style.display = "none"
+            formTeacher.style.display = "block"
+            form.addEventListener('submit', validateFormTeacher);
+        }
+    })
+
+    
 }
 
 formSignup()
