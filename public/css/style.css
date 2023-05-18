@@ -254,7 +254,6 @@ footer button {
 .form1 {
     background-color: #9500CA;
     width: 400px;
-    height: 60vh;
     border-radius: 20px;
     color: white;
     margin: 50px 0;
@@ -335,7 +334,7 @@ footer button {
     color: red;
     display: none;
 }
-.form-informations , .profile-type {
+.form-informations {
     background-color: #AD6EC3;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
@@ -345,9 +344,6 @@ footer button {
     height: 100%;
     font-size: 14px;
     box-shadow: 15px 15px 15px #00000077;
-}
-.profile-type {
-    padding: 40px;
 }
 .profile-btn {
     margin-top: 20px;
@@ -394,36 +390,15 @@ footer button {
 .login-link2 {
     margin-bottom: 10px;
 }
-.form-informations , .form-teacher, .tel-error , .yes-no-error , .tel-error2, .file-error {
+.tel-error , .yes-no-error , .tel-error2, .file-error {
     display: none;
-}
-.radio-tel {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-    position: relative;
 }
 .tel-input {
     background-color: #DF9DF5;
     border: none;
     padding: 5px;
 }
-.text-upload {
-    text-align: center;
-    margin: 20px 0;
-    margin-top: 30px;
-}
-.input-file-box {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
-}
-.yes-no-error, .tel-error , .tel-error2 {
-    position: absolute;
-    top: 35px;
-}
+
 .modal-reset-password {
     position: absolute;
     top: 0;

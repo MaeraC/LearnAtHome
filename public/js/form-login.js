@@ -67,7 +67,6 @@ function formLogin() {
     resetBtn.addEventListener("click", () => {
         modalResetPassword.style.display = "none"
     })
-
 }
 
 formLogin()

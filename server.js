@@ -34,6 +34,38 @@ app.post('/login', (req, res) => {
         }
     })
 })
+
+/*
+// Endpoint pour la route d'inscription
+app.post('/signup', (req, res) => {
+    const { email, password } = req.body; // Récupére les informations entrées dans le formulaire
+  
+    // Effectuer la validation des données d'inscription (par exemple, vérifier si l'utilisateur existe déjà dans la base de données)
+    const collection = mongoose.connection.collection('users');
+  
+    collection.findOne({ email: email }, (err, existingUser) => {
+        if (err) {
+            console.error('Erreur lors de la recherche de l\'utilisateur :', err);
+            res.status(500).json({ error: 'Erreur lors de l\'inscription' });
+        } 
+        else if (existingUser) {
+            res.status(409).json({ error: 'Cet utilisateur existe déjà' }); // Utilisateur existant, renvoyer une réponse d'erreur
+        } 
+        else {
+            // Créer un nouvel utilisateur dans la base de données
+            collection.insertOne({ email: email, password: password }, (err, result) => {
+                if (err) {
+                    console.error('Erreur lors de la création de l\'utilisateur :', err);
+                    res.status(500).json({ error: 'Erreur lors de l\'inscription' });
+                } else {
+                    res.status(201).json({ message: 'Inscription réussie' }); // Inscription réussie, renvoyer une réponse de réussite
+                }
+            });
+        }
+    });
+});
+  */
+  // ...
   
 
 // Démarrer le serveur
