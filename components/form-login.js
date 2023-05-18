@@ -33,7 +33,7 @@ function formLogin() {
             passwordError.style.display = "none"
         }
 
-        window.location.href = "../index.html"
+        window.location.href = "../pages/dashboard.html"
     }
 
     form.addEventListener('submit', validateForm);
