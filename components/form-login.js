@@ -5,15 +5,15 @@ function formLogin() {
     const passwordInput = form.querySelector('.password-input');
     const emailError = form.querySelector('.email-error');
     const passwordError = form.querySelector('.password-error');
-    const submitBtn = document.querySelector(".submit-input-login")
+    const modalResetPassword = document.querySelector(".modal-reset-password")
+    const mdpForget = document.querySelector(".mdp-forget")
+    const resetBtn = modalResetPassword.querySelector("button")
 
-    // Fonction de validation de l'adresse e-mail
     function validateEmail(email) {
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return regex.test(email);
     }
 
-    // Fonction de validation du formulaire
     function validateForm(e) {
         e.preventDefault(); // Empêche la soumission du formulaire
 
@@ -36,8 +36,16 @@ function formLogin() {
         window.location.href = "../index.html"
     }
 
-    // Écouteur d'événement pour la soumission du formulaire
     form.addEventListener('submit', validateForm);
+
+    mdpForget.addEventListener('click', () => {
+        modalResetPassword.style.display = "flex"
+    })
+
+    resetBtn.addEventListener("click", () => {
+        modalResetPassword.style.display = "none"
+    })
+
 }
 
 formLogin()
