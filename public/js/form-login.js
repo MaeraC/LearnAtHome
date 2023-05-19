@@ -6,8 +6,12 @@ function formLogin() {
     const emailError = form.querySelector('.email-error');
     const passwordError = form.querySelector('.password-error');
     const modalResetPassword = document.querySelector(".modal-reset-password")
+    const modalEmail = document.querySelector(".modal-email")
+    const resetMsg = document.querySelector(".reset-msg")
     const mdpForget = document.querySelector(".mdp-forget")
     const resetBtn = modalResetPassword.querySelector("button")
+    const closeModal = modalResetPassword.querySelector(".fa-times")
+    const loginError = document.querySelector(".login-error")
 
     function validateEmail(email) {
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -50,6 +54,7 @@ function formLogin() {
               console.log("Cet utilisateur a bien été trouvé dans la base de données")
             } else {
               console.log("Cet utilisateur n'est pas enregistré dans la base de données")
+              loginError.style.display = "flex"
             }
         })
         .catch(error => {
@@ -65,6 +70,11 @@ function formLogin() {
     })
 
     resetBtn.addEventListener("click", () => {
+        modalEmail.style.display = "none"
+        resetMsg.style.display = "flex"
+    })
+
+    closeModal.addEventListener("click", () => {
         modalResetPassword.style.display = "none"
     })
 }
