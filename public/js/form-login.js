@@ -47,9 +47,9 @@ function formLogin() {
         .then(response => {
             if (response.redirected) {
               window.location.href = response.url; // Redirige vers la page de destination après la connexion réussie
+              console.log("Cet utilisateur a bien été trouvé dans la base de données")
             } else {
-              // Gérer l'échec de la connexion, afficher un message d'erreur, etc.
-              console.log("Le formulaire n'est pas valide")
+              console.log("Cet utilisateur n'est pas enregistré dans la base de données")
             }
         })
         .catch(error => {

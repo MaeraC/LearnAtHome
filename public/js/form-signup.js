@@ -16,16 +16,12 @@ function formSignup() {
     const homeLink = document.querySelector(".home-link")
     const studentRadio = document.querySelector(".student-radio")
     const teacherRadio = document.querySelector(".teacher-radio")
-   
+    const errorExisting = document.querySelector(".error-existing")
+    const radioError = document.querySelector(".radio-error")
 
     function validateEmail(email) {
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return regex.test(email);
-    }
-
-    function validateTelInput(tel) {
-        var regex = /^\d{10}$/ // 10 chiffres
-        return regex.test(tel)
     }
 
     function validateSignupForm(e) {
@@ -69,20 +65,58 @@ function formSignup() {
         else {
             question1Error.style.display = "none"
         }
-        if (!passwordConfirmInput.value.trim() !== '' && !passwordInput.value.trim() !== '' && !nameInput.value.trim() !== '' && validateEmail(emailInput.value) && question1Input.value.trim() !== '' && (!studentRadio.checked || !teacherRadio.checked)) {
-            submitBtn.style.display = 'none';
-            loginLink.style.display = "none";
-            homeLink.style.display = "flex"
 
-            const thanksParagraph = document.querySelector('.thanks');
-            thanksParagraph.style.display = 'block';
+        if (!studentRadio.checked && !teacherRadio.checked) {
+            radioError.style.display = "block"
+        }
+        else {
+            radioError.style.display = "none"
+        }
+
+        if (!passwordConfirmInput.value.trim() !== '' && !passwordInput.value.trim() !== '' && !nameInput.value.trim() !== '' && validateEmail(emailInput.value) && question1Input.value.trim() !== '' && (studentRadio.checked || teacherRadio.checked)) {
+            const userRole = studentRadio.checked ? "student" : "teacher"
+            const userName = nameInput.value.trim()
+
+            fetch('/signup', { // Envoie des données du formulaire au serveur via une requête post
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    email: emailInput.value,
+                    password: passwordInput.value,
+                    role: userRole,
+                    name: userName
+                })
+            })
+            .then(response => {
+                if (response.ok) {
+                    const thanksParagraph = document.querySelector('.thanks')
+                    submitBtn.style.display = 'none'
+                    loginLink.style.display = "none"
+                    homeLink.style.display = "flex"
+                    thanksParagraph.style.display = 'block'
+                    return response.text()
+                }
+                else {
+                    submitBtn.style.display = 'none'
+                    errorExisting.style.display = "block"
+                    throw new Error("Erreur lors de l'inscription")
+                }
+            })
+            .then(data => {
+                console.log(data); // Affiche le message renvoyé par la requête post 
+            })
+            .catch(error => {
+                console.error(error);
+                console.log(error)
+            });
         }
 
        
     }
 
     form.addEventListener("submit", validateSignupForm)
-   
 }
 
 formSignup()

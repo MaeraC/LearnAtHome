@@ -14,7 +14,7 @@
 
     <header class="header-signup"></header>
     <main class="main-signup">
-        <form action="" method="" class="form-inscription">
+        <form action="/signup" method="post" class="form-inscription">
             <div class="form1">
                 <div class="input-container">
                     <div class="email-form">
@@ -45,7 +45,8 @@
                         <label for="checkbox-input" name="checkbox-input"  class="label-checkbox">Se souvenir de moi</label>
                     </div>
                     <input type="submit" name="submit-signup" class="submit-input button" value="S'INSCRIRE"></br>
-                    <p class="thanks">Merci ! Vous serez recontacté par l'un de nos tuteurs bénévoles dans les 24 heures.</p>
+                    <p class="thanks">Merci ! Vous serez recontacté par un membre de l'association dans les 24 heures.</p>
+                    <p class="error-existing">Vous êtes déjà enregistrer dans notre base de données, veuillez vous connecter.</p>
                     <a href="../pages/login.html" class="login-link">Se connecter</a>
                     <a href="../index.html" class="home-link">Retourner à la page d'accueil</a>
                 </div>
@@ -62,10 +63,10 @@
                 </div>
                 <div class="profile-type">
                     <p>Souhaitez-vous vous inscrire en tant que :</p> </br>
-                    <input type="radio" name="student-radio" class="student-radio"><label for="student-radio">Elève</label></br>
-                    <input type="radio" name="teacher-radio" class="teacher-radio"><label for="teacher-radio">Tuteur bénévole</label></br>
-                    <div class="button profile-btn">Valider</div>
+                    <input type="radio" name="studentRadio" class="student-radio"><label for="student-radio">Elève</label></br>
+                    <input type="radio" name="teacherRadio" class="teacher-radio"><label for="teacher-radio">Tuteur bénévole</label></br>
                 </div>
+                <span class="radio-error">Veuillez cocher l'une des deux options ci-dessus.</span>
             </div>
         </form>
     </main>
