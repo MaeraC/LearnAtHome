@@ -27,3 +27,5 @@ function headerDashboard() {
         </div>
     `
 }
+
+headerDashboard()

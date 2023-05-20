@@ -487,3 +487,33 @@ footer button {
     margin: 0 20px;
     font-size: 10px;
 }
+.profile-dashboard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 2px red solid;
+}
+.profile {
+    display: flex;
+    align-items: center;
+}
+.profile-details {
+    margin-right: 10px;
+    text-align: right;
+}
+.profile-img {
+    background: #D7FFDB;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.25);
+    width: 50px;
+    height: 50px;
+}
+.profile-img img {
+    width: 100%;
+    height: 100%;
+}
+.profile-details p {
+    color: #979797;
+    font-size: 13px;
+    margin-top: 5px;
+}
