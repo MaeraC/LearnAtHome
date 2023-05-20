@@ -6,8 +6,11 @@ const getUserInfos = (req, res) => {
         const name = user.name
         const email = user.email
         const role = user.role
+        const studentStars = user.studentStars
+        const tutoring = user.tutoring
+        const jury = user.jury
        
-        res.status(200).json({ name: name, email: email, role: role });
+        res.status(200).json({ name: name, email: email, role: role, studentStars: studentStars, tutoring: tutoring, jury: jury });
     } else {
         res.status(401).json({ error: "Utilisateur non connecté" });
     }
