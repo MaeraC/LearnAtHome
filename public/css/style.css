@@ -486,7 +486,7 @@ footer button {
     margin: 0 20px;
     font-size: 10px;
 }
-.profile-dashboard {
+.profile-dashboard , .calendar-profile {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -680,3 +680,58 @@ input[type="checkbox"]:checked::before {
     height: 38px;
     object-fit: cover;
 }
+
+.calendar-content {
+    padding: 30px;
+}
+.calendar {
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+.calendar .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.calendar .weekdays {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    font-weight: bold;
+}
+.calendar .weekdays li {
+    text-align: center;
+    background: #DF9DF5;
+    border: 1px solid #808080;
+    width: 20%;
+    height: 40px;
+    line-height: 40px;
+}
+.calendar .days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 5px;
+}
+.calendar .days li {
+    list-style: none;
+    text-align: right;
+    cursor: pointer;
+    height: 60px;
+    background: #EEECEC;
+    padding-right: 5px;
+    padding-top: 5px;
+}
+.calendar .days li.selected {
+    background-color: #ccc;
+} 
+.calendar  .days li.today {
+    font-weight: bold;
+}
+.calendar  .button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+  
