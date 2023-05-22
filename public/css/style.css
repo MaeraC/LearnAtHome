@@ -486,7 +486,7 @@ footer button {
     margin: 0 20px;
     font-size: 10px;
 }
-.profile-dashboard , .calendar-profile {
+.profile-dashboard , .calendar-profile , .tasks-profile {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -619,7 +619,9 @@ input[type="checkbox"] {
     cursor: pointer;
     margin-right: 10px;
 }
-  
+.new-tache input[type="checkbox"] {
+    background-color: rgb(216, 216, 216); 
+}
 input[type="checkbox"]:checked {
     background-color: #939393; 
 }
@@ -683,11 +685,13 @@ input[type="checkbox"]:checked::before {
 
 .calendar-content {
     padding: 30px;
+    background-color: #EEECEC;
 }
 .calendar {
     width: 100%;
-    border: 1px solid #ccc;
+    border: 1px solid #d1d1d1;
     padding: 10px;
+    background-color: white;
 }
 .calendar .header {
     display: flex;
@@ -734,4 +738,91 @@ input[type="checkbox"]:checked::before {
     background-color: transparent;
     cursor: pointer;
 }
-  
+
+.tasks-content {
+    display: flex;
+    background-color: #EEECEC;
+    position: relative;
+}
+.task-epingle {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid #cecece;
+    padding: 40px;
+}
+.all-tasks {
+    width: 70%;
+    padding: 40px;
+}
+.task-epingle .taches-container, .all-tasks .taches-container {
+    width: 300px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    height: 350px;
+    font-size: 14px;
+}
+.tasks-content h4 {
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    color: #77129b;
+}
+.taches-container div {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.tasks-content .fa-trash {
+    color: #bdbdbd;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    font-size: 13px;
+}
+.taches-container .task-title {
+    position: relative;
+    margin: 0;
+}
+.task-title img {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 20px;
+}
+.task-title .fa-trash {
+    top: 10px;
+}
+.task-title h4 {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+.task-btn {
+    background-color: #77129b;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.task-student {
+    background-color: #77129b;
+    color: white;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    padding: 5px 10px;
+}

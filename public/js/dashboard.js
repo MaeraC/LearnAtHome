@@ -37,10 +37,7 @@ function updateContent(page) {
         calendar()
     } 
     else if (page === "tasks") {
-        // Ajoutez le contenu des tâches
-        const tasksContent = document.createElement("div");
-        tasksContent.textContent = "Contenu des tâches";
-        contentDash.appendChild(tasksContent);
+        tasks()
     } 
     else if (page === "messages") {
         // Ajoutez le contenu des messages
