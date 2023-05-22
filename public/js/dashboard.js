@@ -40,9 +40,6 @@ function updateContent(page) {
         tasks()
     } 
     else if (page === "messages") {
-        // Ajoutez le contenu des messages
-        const messagesContent = document.createElement("div");
-        messagesContent.textContent = "Contenu des messages";
-        contentDash.appendChild(messagesContent);
+        messages()
     }
 }
