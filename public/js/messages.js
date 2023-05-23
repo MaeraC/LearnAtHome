@@ -1,7 +1,7 @@
 function messages() {
-    const messagesSection = document.createElement("section")
-    const messagesProfile = document.createElement("div")
-    const messagesContent = document.createElement("div")
+    const messagesSection       = document.createElement("section")
+    const messagesProfile       = document.createElement("div")
+    const messagesContent       = document.createElement("div")
 
     function profileMessage() {
         let date = new Date()

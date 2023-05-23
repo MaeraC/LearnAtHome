@@ -16,7 +16,7 @@
   "bugs": {
     "url": "https://github.com/MaeraC/LearnAtHome/issues"
   },
-  "homepage": "https://github.com/MaeraC/LearnAtHome#readme",
+  "homepage": "https://maerac.github.io/learnAtHome/public",
   "dependencies": {
     "bcrypt": "^5.1.0",
     "body-parser": "^1.20.2",
