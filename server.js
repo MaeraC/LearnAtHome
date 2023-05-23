@@ -14,8 +14,8 @@ app.use(bodyParser.json()); // Middleware qui analyse les corps de requête JSON
 app.use(express.static(path.join(__dirname, 'public'))); // Définit le dossier public comme répertoire statique
 
 // Connexion à MongoDB
-mongoose.connect('mongodb+srv://contaretlearnathome:Mae1996Mae1@cluster0.ffhxsk6.mongodb.net/myDatabase',
-    {useNewUrlParser: true,
+mongoose.connect('process.env.MONGODB_URI', {
+    useNewUrlParser: true,
     useUnifiedTopology: true
 })
 .then(() => console.log('Connexion à MongoDB réussie !'))
