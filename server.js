@@ -52,6 +52,7 @@ app.get("/user-info", isauthenticated, getUserInfos)
 
 
 // Démarre le serveur
-app.listen(port, () => {
-  console.log(`Serveur démarré sur le port ${port}`)
-})
+app.listen(process.env.PORT || 3000, () => {
+    console.log(`Serveur démarré sur le port ${process.env.PORT || 3000}`);
+  });
+  
